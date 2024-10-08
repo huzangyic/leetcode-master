@@ -15,12 +15,21 @@ int firstMissingPositive(int* nums, int numsSize)
         return 1;
     }
 
+    for (int i = 0; i < numsSize; i++) {
+        printf("%d\n", nums[i]);
+    }
+    printf("======\n", nums[i]);
+
     // 若相应元素存在，则设置对应索引下标元素为负数
     int idx;
     for (int i = 0; i < numsSize; i++) {
         idx = abs(nums[i]) - 1;
         // 这里用abs的目的是，防止一个数被多次改变符号;
         nums[idx] = abs(nums[idx]) * (-1);
+    }
+
+    for (int i = 0; i < numsSize; i++) {
+        printf("%d\n", nums[i]);
     }
 
     int index = 0;
